@@ -1,4 +1,8 @@
-~/dufs /workspaces/storage -p 6666 --allow-all > ~/dufs.log 2>&1 &
+~/dufs /workspaces/storage -p 6666 --allow-all -a admin:1414@/:rw > ~/dufs.log 2>&1 &
+
+
+
+
 
 
 #for changing the file
