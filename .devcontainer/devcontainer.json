@@ -1,0 +1,10 @@
+{
+    "postStartCommand": "/home/codespace/start-cloud-drive.sh",
+    "forwardPorts": [6666],
+    "portsAttributes": {
+        "6666": {
+            "label": "NetDrive",
+            "visibility": "public"
+        }
+    }
+}
