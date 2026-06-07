@@ -1,4 +1,4 @@
-~/dufs /workspaces/storage -p 6666 --allow-all -a admin:1414@/:rw > ~/dufs.log 2>&1 &
+~/dufs /workspaces/storage -p 6666 --allow-all -a admin:1414@/:rw > ~/dufs.log 2>&1 &~
 
 
 
@@ -33,7 +33,9 @@ chmod +x ~/dufs
 
 
 
+ssh into is
 
+gh codespace ssh -c fictional-eureka-x5qqvgxqwp4qcpv6j
 
 
 
