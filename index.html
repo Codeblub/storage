@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; background: #000; overflow: hidden; }
+        canvas { width: 100vw; height: 100vh; display: block; cursor: none; }
+    </style>
+</head>
+<body>
+    <canvas id="screen"></canvas>
+    <script>
+        const canvas = document.getElementById('screen');
+        const ctx = canvas.getContext('2d');
+        const host = prompt("Enter your WebSocket URL (e.g., 8080-your-url.app.github.dev):");
+        const socket = new WebSocket(`ws://${host}`);
+        
+        socket.binaryType = 'blob';
+
+        socket.onmessage = (e) => {
+            const img = new Image();
+            img.src = URL.createObjectURL(e.data);
+            img.onload = () => ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        };
+
+        canvas.onclick = () => canvas.requestPointerLock();
+        
+        document.onmousemove = (e) => {
+            if (document.pointerLockElement === canvas) {
+                socket.send(JSON.stringify({type: 'mouse', x: e.movementX, y: e.movementY}));
+            }
+        };
+    </script>
+</body>
+</html>

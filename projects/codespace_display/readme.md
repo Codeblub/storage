@@ -1,3 +1,35 @@
+
+
+
+
+
+
+
+
+
+
+python3 ~/server.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 for display
 
 Xvfb :99 -screen 0 1920x1080x24 &
